@@ -1,0 +1,41 @@
+<div class="container">
+  
+  <div id="list-item">
+    <h1 (click)="expand = !expand" id="title">{{ todo.title }}</h1>
+    <div id="delete-icon" (click)="onDeleteTodo(todo)">x</div>
+  </div>
+  
+  <div *ngIf="expand" id="description">
+    
+    <button *ngIf="!addComment" (click)="addComment = !addComment">Add comment</button>
+    
+    <form *ngIf="addComment" [formGroup]="commentForm" (ngSubmit)="onAddComment()">
+
+      <textarea 
+        formControlName="comment"
+        id="comment" 
+        cols="40" 
+        rows="2" 
+        placeholder="Comment...">
+      </textarea>
+
+      <div>
+        <button [disabled]="commentForm.invalid" class="btn">Add comment</button>
+        <button (click)="addComment = false" class="btn">Cancel</button>
+      </div>
+
+    </form>
+
+    <section id="filter">
+      <form id="filter-form">
+          <div class="label"><label for="filter">Filter comments: </label></div>
+          <div class="input"><input [(ngModel)]="searchValue" type="text" name="filter" id="filter" placeholder="Type keyword"></div>
+      </form>
+    </section>
+    
+    <ul>
+      <div *ngFor="let comment of todo.comments | commentFilter:searchValue; let i = index" id="comment-item"><li>{{ comment }}</li> <div (click)="onDeleteComment(todo, i)" id="icon">x</div></div>
+    </ul>
+
+  </div>
+</div>

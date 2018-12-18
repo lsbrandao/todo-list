@@ -1,0 +1,73 @@
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    width: 300px;
+    padding: 10px;
+    margin: auto;
+    background: whitesmoke;
+    border-bottom: 1px solid black;
+}
+
+#list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#delete-icon {
+    display: flex;
+    align-items: center;
+    background-color: salmon;
+    color: white;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 30%;
+    padding: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#title {
+    font-size: 1.1em;
+    cursor: pointer;
+    padding-right: 200px;
+}
+
+form {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.btn {
+    padding: 5px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+#comment-item {
+    display: flex;
+    align-items: center;
+}
+
+#comment-item #icon {
+    display: flex;
+    align-items: center;
+    background-color: salmon;
+    color: white;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 30%;
+    padding: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#filter-form {
+    font-size: 0.8em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
